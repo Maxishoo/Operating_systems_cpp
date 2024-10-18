@@ -66,6 +66,9 @@
         "numbers": "cpp",
         "span": "cpp",
         "variant": "cpp",
-        "text_encoding": "cpp"
-    }
+        "text_encoding": "cpp",
+        "pthread.h": "c",
+        "fstream": "cpp"
+    },
+    "cmake.sourceDirectory": "/workspaces/MAI_OS_Labs/lab2/src"
 }

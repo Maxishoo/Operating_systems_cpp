@@ -11,5 +11,5 @@
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
-    "postCreateCommand": "apt-get update && apt-get install -y cmake && apt-get install -y strace && git config --global --add safe.directory '*'"
+    "postCreateCommand": "apt-get update && apt-get install -y cmake && apt-get install -y strace && apt-get install -y gdb && git config --global --add safe.directory '*'"
 }
