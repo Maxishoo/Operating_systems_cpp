@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/workspaces/MAI_OS_Labs/build",
-  "command": "/usr/bin/g++-12   -g -std=gnu++20 -o CMakeFiles/lab2_exe.dir/main.cpp.o -c /workspaces/MAI_OS_Labs/lab2/src/main.cpp",
-  "file": "/workspaces/MAI_OS_Labs/lab2/src/main.cpp"
-}
-]
