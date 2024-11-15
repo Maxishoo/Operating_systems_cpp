@@ -4,8 +4,8 @@
 #include <fcntl.h>
 #include <sys/shm.h>
 #include <sys/mman.h>
-#include <unistd.h>
 #include <semaphore.h>
+#include <sys/wait.h>
 
 // • O_RDWR: Флаг для открытия файла для чтения и записи.  O_RDONLY | O_WRONLY == O_RDWR
 // • O_CREAT: Флаг, который создает файл, если он не существует.
@@ -20,7 +20,6 @@ int main()
     std::cin >> f2;
 
     const int SIZE = 4096; // size in bytes
-    std::cout << "All good\n";
     // create first shared memory file
     const char *name1 = "OS1"; // shared name
     int shm_fd1;               // shared memory file descriptor
@@ -41,8 +40,8 @@ int main()
     const char *sem1_name = "/sem1";
     const char *sem2_name = "/sem2";
 
-    sem_t *sem1 = sem_open(sem1_name, O_CREAT | O_EXCL, 0666, 0);
-    sem_t *sem2 = sem_open(sem2_name, O_CREAT | O_EXCL, 0666, 0);
+    sem_t *sem1 = sem_open(sem1_name, O_CREAT | O_EXCL, 0666, 1);
+    sem_t *sem2 = sem_open(sem2_name, O_CREAT | O_EXCL, 0666, 1);
 
     // создаем детей
     pid_t ch1 = fork();
@@ -74,23 +73,19 @@ int main()
             while (1)
             {
                 std::cin >> st;
-                int len = st.size() + 1;
                 if (st == "!q")
                     break;
-
                 if (rand() % 100 <= 80)
                 {
-                    strcpy((char *)ptr1, st.c_str());
-                    sem_post(sem1); // Сигнализируем, что файл свободен
-                    sleep(1/8);
                     sem_wait(sem1);
+                    strcpy((char *)ptr1, st.c_str());
+                    sem_post(sem1); // Сигнализируем, что файл1 свободен
                 }
                 else
                 {
-                    strcpy((char *)ptr2, st.c_str());
-                    sem_post(sem2); // Сигнализируем, что файл свободен
-                    sleep(1/8);
                     sem_wait(sem2);
+                    strcpy((char *)ptr2, st.c_str());
+                    sem_post(sem2); // Сигнализируем, что файл2 свободен
                 }
             }
 
@@ -98,16 +93,18 @@ int main()
             st = "!q";
 
             // Первый ребенок
+            sem_wait(sem1);
             strcpy((char *)ptr1, st.c_str());
             sem_post(sem1);
-            sleep(1/8);
-            sem_wait(sem1);
 
             // Второй ребенок
+            sem_wait(sem2);
             strcpy((char *)ptr2, st.c_str());
             sem_post(sem2);
-            sleep(1/8);
-            sem_wait(sem2);
+
+            int status;
+            waitpid(ch1, &status, 0);
+            waitpid(ch2, &status, 0);
 
             // Освобождение ресурсов
             munmap(ptr1, SIZE);
