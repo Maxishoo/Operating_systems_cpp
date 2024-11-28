@@ -1,0 +1,3 @@
+/workspaces/MAI_OS_Labs/build/CMakeFiles/lab2_exe.dir
+/workspaces/MAI_OS_Labs/build/CMakeFiles/edit_cache.dir
+/workspaces/MAI_OS_Labs/build/CMakeFiles/rebuild_cache.dir

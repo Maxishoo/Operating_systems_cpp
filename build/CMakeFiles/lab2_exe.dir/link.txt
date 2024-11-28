@@ -1,0 +1,1 @@
+/usr/bin/g++-12 -g CMakeFiles/lab2_exe.dir/main.cpp.o -o lab2_exe 
