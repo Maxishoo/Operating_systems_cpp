@@ -5,8 +5,8 @@ extern "C" float Square(float a, float b);
 
 int main()
 {
-    int prog = 0;
-    while (prog != -1)
+    int prog;
+    while (true)
     {
         std::cout << "Input program code: -1-exit, 1-calc PI, 2-calc square\n";
         std::cin >> prog;
@@ -26,7 +26,7 @@ int main()
             break;
         default:
             std::cout << "Exit\n";
-            break;
+            return 0;
         }
     }
 }

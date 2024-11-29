@@ -7,7 +7,7 @@ int main()
     int real = 1;
     void *lib = nullptr; // Initialize lib to nullptr
 
-    typedef float (*PiFunc)(float);
+    typedef float (*PiFunc)(int);
     typedef float (*SquareFunc)(float, float);
 
     PiFunc Pi; // Initialize function pointers to nullptr
