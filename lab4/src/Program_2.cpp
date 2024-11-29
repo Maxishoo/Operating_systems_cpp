@@ -74,7 +74,7 @@ int main()
                 std::cout << "Teck realization of Pi is Leibniz\n";
             else
                 std::cout << "Teck realization of Pi is Wallis\n";
-            std::cout << lib<<" "<<  Pi<<" "<< Square << "Pi number: " << k<<" "<< Pi(k) << "\n\n";
+            std::cout << "Pi number: " << k<<" "<< Pi(k) << "\n\n";
             break;
         case 2:
             int a, b;
