@@ -27,7 +27,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.25.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeSystem.cmake"
-  "/workspaces/MAI_OS_Labs/lab2/src/CMakeLists.txt"
+  "/workspaces/MAI_OS_Labs/lab5_7/src/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -43,5 +43,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/lab2_exe.dir/DependInfo.cmake"
+  "CMakeFiles/lab5_7_lib.dir/DependInfo.cmake"
+  "CMakeFiles/control.dir/DependInfo.cmake"
+  "CMakeFiles/computing.dir/DependInfo.cmake"
   )

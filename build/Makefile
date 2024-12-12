@@ -57,7 +57,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /workspaces/MAI_OS_Labs/lab2/src
+CMAKE_SOURCE_DIR = /workspaces/MAI_OS_Labs/lab5_7/src
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /workspaces/MAI_OS_Labs/build
@@ -117,41 +117,115 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lab2_exe
+# Target rules for targets named lab5_7_lib
 
 # Build rule for target.
-lab2_exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab2_exe
-.PHONY : lab2_exe
+lab5_7_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab5_7_lib
+.PHONY : lab5_7_lib
 
 # fast build rule for target.
-lab2_exe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab2_exe.dir/build.make CMakeFiles/lab2_exe.dir/build
-.PHONY : lab2_exe/fast
+lab5_7_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5_7_lib.dir/build.make CMakeFiles/lab5_7_lib.dir/build
+.PHONY : lab5_7_lib/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+#=============================================================================
+# Target rules for targets named control
+
+# Build rule for target.
+control: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 control
+.PHONY : control
+
+# fast build rule for target.
+control/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/build
+.PHONY : control/fast
+
+#=============================================================================
+# Target rules for targets named computing
+
+# Build rule for target.
+computing: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 computing
+.PHONY : computing
+
+# fast build rule for target.
+computing/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/computing.dir/build.make CMakeFiles/computing.dir/build
+.PHONY : computing/fast
+
+computing.o: computing.cpp.o
+.PHONY : computing.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab2_exe.dir/build.make CMakeFiles/lab2_exe.dir/main.cpp.o
-.PHONY : main.cpp.o
+computing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/computing.dir/build.make CMakeFiles/computing.dir/computing.cpp.o
+.PHONY : computing.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+computing.i: computing.cpp.i
+.PHONY : computing.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab2_exe.dir/build.make CMakeFiles/lab2_exe.dir/main.cpp.i
-.PHONY : main.cpp.i
+computing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/computing.dir/build.make CMakeFiles/computing.dir/computing.cpp.i
+.PHONY : computing.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+computing.s: computing.cpp.s
+.PHONY : computing.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab2_exe.dir/build.make CMakeFiles/lab2_exe.dir/main.cpp.s
-.PHONY : main.cpp.s
+computing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/computing.dir/build.make CMakeFiles/computing.dir/computing.cpp.s
+.PHONY : computing.cpp.s
+
+control.o: control.cpp.o
+.PHONY : control.o
+
+# target to build an object file
+control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/control.cpp.o
+.PHONY : control.cpp.o
+
+control.i: control.cpp.i
+.PHONY : control.i
+
+# target to preprocess a source file
+control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/control.cpp.i
+.PHONY : control.cpp.i
+
+control.s: control.cpp.s
+.PHONY : control.s
+
+# target to generate assembly for a file
+control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/control.dir/build.make CMakeFiles/control.dir/control.cpp.s
+.PHONY : control.cpp.s
+
+lib.o: lib.cpp.o
+.PHONY : lib.o
+
+# target to build an object file
+lib.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5_7_lib.dir/build.make CMakeFiles/lab5_7_lib.dir/lib.cpp.o
+.PHONY : lib.cpp.o
+
+lib.i: lib.cpp.i
+.PHONY : lib.i
+
+# target to preprocess a source file
+lib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5_7_lib.dir/build.make CMakeFiles/lab5_7_lib.dir/lib.cpp.i
+.PHONY : lib.cpp.i
+
+lib.s: lib.cpp.s
+.PHONY : lib.s
+
+# target to generate assembly for a file
+lib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab5_7_lib.dir/build.make CMakeFiles/lab5_7_lib.dir/lib.cpp.s
+.PHONY : lib.cpp.s
 
 # Help Target
 help:
@@ -161,10 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... lab2_exe"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... computing"
+	@echo "... control"
+	@echo "... lab5_7_lib"
+	@echo "... computing.o"
+	@echo "... computing.i"
+	@echo "... computing.s"
+	@echo "... control.o"
+	@echo "... control.i"
+	@echo "... control.s"
+	@echo "... lib.o"
+	@echo "... lib.i"
+	@echo "... lib.s"
 .PHONY : help
 
 

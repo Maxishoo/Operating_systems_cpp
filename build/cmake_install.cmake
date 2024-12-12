@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/MAI_OS_Labs/lab2/src
+# Install script for directory: /workspaces/MAI_OS_Labs/lab5_7/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

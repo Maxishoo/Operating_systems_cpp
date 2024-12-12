@@ -68,7 +68,15 @@
         "variant": "cpp",
         "text_encoding": "cpp",
         "pthread.h": "c",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "chrono": "cpp",
+        "list": "cpp",
+        "unordered_set": "cpp",
+        "ratio": "cpp",
+        "iomanip": "cpp",
+        "sstream": "cpp",
+        "cinttypes": "cpp",
+        "map": "cpp"
     },
-    "cmake.sourceDirectory": "/workspaces/MAI_OS_Labs/lab2/src"
+    "cmake.sourceDirectory": "/workspaces/MAI_OS_Labs/lab5_7/src"
 }
