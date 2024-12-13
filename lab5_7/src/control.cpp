@@ -43,7 +43,7 @@ int main()
                 std::cout << "Ok: " << m.id << " '" << m.st << "'not fount" << std::endl;
                 for (auto it = saved_mes.begin(); it != saved_mes.end(); ++it)
                 {
-                    if (it->command == ExecErr and it->id == m.id)
+                    if (it->command == ExecFnd and it->id == m.id)
                     {
                         saved_mes.erase(it);
                         break;
@@ -130,7 +130,6 @@ int main()
             {
                 message m(Create, parent_id, child_id);
                 saved_mes.push_back(m);
-                std::cout << "Saved create mes" << std::endl;
                 for (auto &i : children)
                     send_mes(i, m);
             }
@@ -140,11 +139,8 @@ int main()
             char input[100];
             fgets(input, sizeof(input), stdin);
 
-            // // Удаляем символ новой строки, если он присутствует
-            // input[strcspn(input, "\n")] = 0;
-
             int id, val;
-            char key[40];
+            char key[30];
 
             // Используем sscanf для разбора строки
             if (sscanf(input, "%d %30s %d", &id, key, &val) == 3)
@@ -156,11 +152,8 @@ int main()
                 }
                 message m = {ExecAdd, id, val, key};
                 saved_mes.push_back(m);
-                std::cout << "Saved create mes" << std::endl;
                 for (auto &i : children)
-                {
                     send_mes(i, m);
-                }
             }
             else if (sscanf(input, "%d %30s", &id, key) == 2)
             {
@@ -171,11 +164,8 @@ int main()
                 }
                 message m = {ExecFnd, id, -1, key};
                 saved_mes.push_back(m);
-                std::cout << "Saved create mes" << std::endl;
                 for (auto &i : children)
-                {
                     send_mes(i, m);
-                }
             }
         }
         else if (command == "ping")
@@ -192,13 +182,10 @@ int main()
                 saved_mes.push_back(m);
                 for (auto &i : children)
                     send_mes(i, m);
-                std::cout << getpid() << "send" << std::endl;
             }
         }
         else
-        {
             std::cout << "Error: Command doesn't exist!" << std::endl;
-        }
         usleep(100000);
     }
     return 0;

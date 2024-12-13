@@ -49,7 +49,7 @@ public:
     int id;                // айди кому шлем
     int num;               // данные, либо число либо строка
     std::time_t sent_time; // время отправки
-    char st[30];
+    char st[30];           // строка
 };
 
 class Node
@@ -59,16 +59,18 @@ public:
     pid_t pid;
     void *context;
     void *socket;
-    bool is_child;
     std::string address;
 
     bool operator==(const Node &other) const
     {
-        return id == other.id && address == other.address;
+        return id == other.id && pid == other.pid;
     }
 };
 
 Node createNode(int id, bool is_child);
+
 Node createProcess(int id);
+
 void send_mes(Node &node, message m);
+
 message get_mes(Node &node);

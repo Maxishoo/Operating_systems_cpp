@@ -22,7 +22,6 @@ Node createNode(int id, bool is_child)
     Node node;
     node.id = id;
     node.pid = getpid();
-    node.is_child = is_child;
 
     node.context = zmq_ctx_new();
     node.socket = zmq_socket(node.context, ZMQ_DEALER);
@@ -61,7 +60,6 @@ Node createProcess(int id)
 
 void send_mes(Node &node, message m)
 {
-    std::cout << "--send:" << getpid() << " " << m.id << " " << node.is_child << " lib send mes" << " " << std::endl;
     zmq_msg_t request_message;
     zmq_msg_init_size(&request_message, sizeof(m));
     std::memcpy(zmq_msg_data(&request_message), &m, sizeof(m));
@@ -74,12 +72,7 @@ message get_mes(Node &node)
     zmq_msg_init(&request);
     auto result = zmq_msg_recv(&request, node.socket, ZMQ_DONTWAIT);
     if (result == -1)
-    {
         return message(None, -1, -1);
-    }
-
-    std::cout << "--get:" << getpid() << " " << node.is_child << " " << result << std::endl;
-
     message m;
     std::memcpy(&m, zmq_msg_data(&request), sizeof(message));
     return m;

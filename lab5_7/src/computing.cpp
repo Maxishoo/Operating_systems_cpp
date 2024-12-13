@@ -5,26 +5,18 @@ int main(int argc, char *argv[])
     Node I = createNode(atoi(argv[1]), true);
     std::map<std::string, int> dict;
 
-    //while(1);
-    //usleep(1000000);
-
-
     std::list<Node> children;
     while (true)
     {
         for (auto &i : children)
         {
             message m = get_mes(i);
-            if (m.command == None)
-                continue;
-            send_mes(I, m);
-            std::cout << I.id << " send reply " << std::endl;
+            if (m.command != None)
+                send_mes(I, m);
         }
 
         // проверяем сообщение от родителя
         message m = get_mes(I);
-        if(m.command!=None)
-            std::cout<<"Child com = "<<int(m.command)<<std::endl;
         switch (m.command)
         {
         case Create:
@@ -33,54 +25,37 @@ int main(int argc, char *argv[])
                 Node child = createProcess(m.num);
                 children.push_back(child);
                 send_mes(I, {Create, child.id, child.pid});
-                std::cout << I.id << "send create" << std::endl;
             }
             else // отправляем команду на добавление ребенка детям
-            {
                 for (auto &i : children)
                     send_mes(i, m);
-            }
             break;
         case Ping:
             if (m.id == I.id)
                 send_mes(I, m); // спросили меня, отправляем что мы живы
             else                // отправляем детям запрос
-            {
                 for (auto &i : children)
                     send_mes(i, m);
-                std::cout << I.id << "send ping" << std::endl;
-            }
             break;
         case ExecAdd:
             if (m.id == I.id) // спросили меня, отправляем ответ
             {
-                std::cout << "pol" << m.st << std::endl;
                 dict[std::string(m.st)] = m.num;
                 send_mes(I, m);
             }
             else // отправляем детям запрос
-            {
                 for (auto &i : children)
                     send_mes(i, m);
-                std::cout << I.id << "send exec_add" << std::endl;
-            }
             break;
         case ExecFnd:
             if (m.id == I.id) // спросили меня, отправляем ответ
-            {
-                std::cout << "pol" << m.st << std::endl;
                 if (dict.find(std::string(m.st)) != dict.end())
                     send_mes(I, {ExecFnd, I.id, dict[std::string(m.st)], m.st});
                 else
                     send_mes(I, {ExecErr, I.id, -1, m.st});
-                std::cout << I.id << "send exec_fnd" << std::endl;
-            }
             else // отправляем детям запрос
-            {
                 for (auto &i : children)
                     send_mes(i, m);
-                std::cout << I.id << "send exec_fnd" << std::endl;
-            }
             break;
         default:
             break;
