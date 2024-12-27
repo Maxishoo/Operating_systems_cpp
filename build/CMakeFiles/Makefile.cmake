@@ -24,10 +24,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.25/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.25/Modules/Platform/UnixPaths.cmake"
+  "/workspaces/MAI_OS_Labs/CourseProject/src/CMakeLists.txt"
   "CMakeFiles/3.25.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeSystem.cmake"
-  "/workspaces/MAI_OS_Labs/lab5_7/src/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -43,7 +43,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/lab5_7_lib.dir/DependInfo.cmake"
-  "CMakeFiles/control.dir/DependInfo.cmake"
-  "CMakeFiles/computing.dir/DependInfo.cmake"
+  "CMakeFiles/lib.dir/DependInfo.cmake"
+  "CMakeFiles/lib2.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
   )

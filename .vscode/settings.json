@@ -76,7 +76,10 @@
         "iomanip": "cpp",
         "sstream": "cpp",
         "cinttypes": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     },
-    "cmake.sourceDirectory": "/workspaces/MAI_OS_Labs/lab5_7/src"
+    "cmake.sourceDirectory": "/workspaces/MAI_OS_Labs/CourseProject/src"
 }

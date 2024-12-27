@@ -1,17 +1,17 @@
 [
 {
   "directory": "/workspaces/MAI_OS_Labs/build",
-  "command": "/usr/bin/g++-12  -I/workspaces/MAI_OS_Labs/lab5_7/src -g -std=gnu++20 -o CMakeFiles/lab5_7_lib.dir/lib.cpp.o -c /workspaces/MAI_OS_Labs/lab5_7/src/lib.cpp",
-  "file": "/workspaces/MAI_OS_Labs/lab5_7/src/lib.cpp"
+  "command": "/usr/bin/g++-12  -I/workspaces/MAI_OS_Labs/CourseProject/src -g -std=gnu++20 -o CMakeFiles/lib.dir/First_fit.cpp.o -c /workspaces/MAI_OS_Labs/CourseProject/src/First_fit.cpp",
+  "file": "/workspaces/MAI_OS_Labs/CourseProject/src/First_fit.cpp"
 },
 {
   "directory": "/workspaces/MAI_OS_Labs/build",
-  "command": "/usr/bin/g++-12  -I/workspaces/MAI_OS_Labs/lab5_7/src -g -std=gnu++20 -o CMakeFiles/control.dir/control.cpp.o -c /workspaces/MAI_OS_Labs/lab5_7/src/control.cpp",
-  "file": "/workspaces/MAI_OS_Labs/lab5_7/src/control.cpp"
+  "command": "/usr/bin/g++-12  -I/workspaces/MAI_OS_Labs/CourseProject/src -g -std=gnu++20 -o CMakeFiles/lib2.dir/Buddy.cpp.o -c /workspaces/MAI_OS_Labs/CourseProject/src/Buddy.cpp",
+  "file": "/workspaces/MAI_OS_Labs/CourseProject/src/Buddy.cpp"
 },
 {
   "directory": "/workspaces/MAI_OS_Labs/build",
-  "command": "/usr/bin/g++-12  -I/workspaces/MAI_OS_Labs/lab5_7/src -g -std=gnu++20 -o CMakeFiles/computing.dir/computing.cpp.o -c /workspaces/MAI_OS_Labs/lab5_7/src/computing.cpp",
-  "file": "/workspaces/MAI_OS_Labs/lab5_7/src/computing.cpp"
+  "command": "/usr/bin/g++-12  -I/workspaces/MAI_OS_Labs/CourseProject/src -g -std=gnu++20 -o CMakeFiles/main.dir/main.cpp.o -c /workspaces/MAI_OS_Labs/CourseProject/src/main.cpp",
+  "file": "/workspaces/MAI_OS_Labs/CourseProject/src/main.cpp"
 }
 ]

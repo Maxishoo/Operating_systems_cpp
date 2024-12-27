@@ -1,5 +1,5 @@
-/workspaces/MAI_OS_Labs/build/CMakeFiles/lab5_7_lib.dir
-/workspaces/MAI_OS_Labs/build/CMakeFiles/control.dir
-/workspaces/MAI_OS_Labs/build/CMakeFiles/computing.dir
+/workspaces/MAI_OS_Labs/build/CMakeFiles/lib.dir
+/workspaces/MAI_OS_Labs/build/CMakeFiles/lib2.dir
+/workspaces/MAI_OS_Labs/build/CMakeFiles/main.dir
 /workspaces/MAI_OS_Labs/build/CMakeFiles/edit_cache.dir
 /workspaces/MAI_OS_Labs/build/CMakeFiles/rebuild_cache.dir

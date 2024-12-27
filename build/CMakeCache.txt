@@ -147,7 +147,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=os_labs
+CMAKE_PROJECT_NAME:STATIC=CourseWork
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -211,17 +211,14 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//The directory containing a CMake configuration file for ZeroMQ.
-ZeroMQ_DIR:PATH=ZeroMQ_DIR-NOTFOUND
+//Value Computed by CMake
+CourseWork_BINARY_DIR:STATIC=/workspaces/MAI_OS_Labs/build
 
 //Value Computed by CMake
-os_labs_BINARY_DIR:STATIC=/workspaces/MAI_OS_Labs/build
+CourseWork_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-os_labs_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-os_labs_SOURCE_DIR:STATIC=/workspaces/MAI_OS_Labs/lab5_7/src
+CourseWork_SOURCE_DIR:STATIC=/workspaces/MAI_OS_Labs/CourseProject/src
 
 
 ########################
@@ -306,7 +303,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/workspaces/MAI_OS_Labs/lab5_7/src
+CMAKE_HOME_DIRECTORY:INTERNAL=/workspaces/MAI_OS_Labs/CourseProject/src
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
